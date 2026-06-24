@@ -1,0 +1,14 @@
+module fifo_status(
+    input [3:0] wptr,
+    input [3:0] rptr,
+
+    output full,
+    output empty
+);
+
+assign empty = (wptr == rptr);
+
+assign full =
+    ((wptr + 1'b1) == rptr);
+
+endmodule
